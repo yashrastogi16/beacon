@@ -16,7 +16,7 @@ class store(models.Model):
 	contact_no = models.CharField('Contact', max_length=15)
 	createdat = models.DateTimeField(auto_now=True)
 	def __unicode__(self):
-		return smart_unicode(self.store_name)
+		return smart_unicode(self.id)
 
 class department(models.Model):
 	department_name = models.CharField('Department Name', max_length=50)
