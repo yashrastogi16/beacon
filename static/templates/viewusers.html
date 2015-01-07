@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %} 
+
+
+      <div class="table-responsive" >
+            
+              <table class="table table-bordered table-striped" id='testTable'>
+                         <thead> 
+                            <tr>
+                              <th> UserName </th>
+                              <th> Gender </th>
+                              <th> UserId </th>
+                              <th> Emailid </th>
+                              <th> Gender </th>
+                              <th> Email Id </th>
+                              <th> Resident Location </th>
+                              <th> Contact Number </th>
+                              <th> Status </th>
+                              <!-- <th>Member<i class="fa fa-sort"></i></th>                -->                    
+                            </tr>
+                    		</thead>
+                          <tbody>
+                          {%for user in lists %}
+                            <tr>
+                              <td>{{ user.username}}</td>                  
+                              <td>{{ user.gender}}</td>
+                              <td>{{ user.user_id}}</td>
+                              <td>{{ user.email_id}}</td> 
+                              <td>{{ user.gender}}</td>
+                              <td>{{ user.email_id}}</td>
+                              <td>{{ user.resident_location}}</td>
+                              <td>{{ user.contact_no}}</td>
+                              <td>{{ user.status}}</td>              
+                              <td><button type="button"  class="btn btn-primary center" onclick="edit({{user.id}})">Edit</button><br/>
+                              </td>               
+                              </tr>
+                              {%endfor%}                     
+                          </tbody>
+                        </table>
+                        </div>
+
+                       
+{% endblock %}

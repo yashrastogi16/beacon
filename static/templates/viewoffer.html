@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %} 
+
+
+      <div class="table-responsive" >
+            
+              <table class="table table-bordered table-striped" id='testTable'>
+                         <thead> 
+                            <tr>
+                              <th> Offer Code </th>
+                              <th> Type </th>
+                              <th> Offer Name</th>
+                              <th> Membership </th>
+                              <th> Start Time </th>
+                              <th> End Time </th> 
+                            </tr>
+                    		</thead>
+                          <tbody>
+                          {%for user in lists %}
+                            <tr>
+                              <td>{{ user.offer_code }}</td>                  
+                              <td>{{ user.entry_exit_type }}</td>
+                              <td>{{ user.offername }}</td>
+                              <td>{{ user.membership }}</td>
+                              <td>{{ user.start_time }}</td>
+                              <td>{{ user.end_time }}</td>          
+                              <td><button type="button"  class="btn btn-primary center" onclick="edit({{user.id}})">Edit</button><br/>
+                              </td>               
+                              </tr>
+                              {%endfor%}                     
+                          </tbody>
+                        </table>
+                        </div>
+
+                       
+{% endblock %}

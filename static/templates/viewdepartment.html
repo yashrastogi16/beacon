@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %} 
+
+
+      <div class="table-responsive" >
+            
+              <table class="table table-bordered table-striped" id='testTable'>
+                         <thead> 
+                            <tr>
+                              <th> Department Name</th>
+                              <th> Department ID</th>
+                              <th> Store </th>
+                              <th> Created At </th>
+                              <!-- <th>Member<i class="fa fa-sort"></i></th>                -->                    
+                            </tr>
+                    		</thead>
+                          <tbody>
+                          {%for user in lists %}
+                            <tr>
+                              <td>{{ user.department_name }}</td>                  
+                              <td>{{ user.department_id }}</td>
+                              <td>{{ user.store }}
+                              <td>{{ user.createdat }}</td>          
+                              <td><button type="button"  class="btn btn-primary center" onclick="edit({{user.id}})">Edit</button><br/>
+                              </td>               
+                              </tr>
+                              {%endfor%}                     
+                          </tbody>
+                        </table>
+                        </div>
+
+                       
+{% endblock %}

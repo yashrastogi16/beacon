@@ -14,7 +14,7 @@ class GCMDeviceViewSet(viewsets.ModelViewSet):
 @api_view(['GET', 'POST'])
 def gcmdevice_list(request):
     """
-    List all Gcmdevice, or create a new snippet.
+    List all Gcmdevice, or create a new GCMDevice.
     """
     if request.method == 'GET':
         gcmdevice = GCMDevice.objects.all()
@@ -35,7 +35,7 @@ def pushnotify(request,registration_id,message):
     try:
         device = GCMDevice.objects.get(registration_id = registration_id)
     except Exception as e:
-        print e
+        print e,"is the exception coming"
         return Response(status=status.HTTP_404_NOT_FOUND)
     if request.method == 'GET':
         data = {}
